@@ -19,3 +19,5 @@ int main(){
     printf("A media entre %lf,%lf,%lf,%lf = %lf",a,b,c,d,media(a,b,c,d));
     return 0;
 }
+
+// Escreva um programa que calcule a média aritmética de quatro números reais informados pelo usuário.

@@ -26,3 +26,6 @@ int main (){
 
     return 0;
 }
+
+// Escreva um programa que leia o salário de um funcionário, um percentual
+// de aumento e ao final calcule e mostre o valor do aumento e do novo salário.

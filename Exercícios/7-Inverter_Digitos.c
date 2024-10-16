@@ -17,3 +17,11 @@ int main(){
 
     return 0;
 }
+
+//Escreva um programa capaz de inverter um número inteiro de 3 dígitos 
+//fornecido pelo usuário. A inversão consiste em apresentar primeiro a 
+//unidade, seguida da dezena e por último a centena. Exemplo:
+
+// Exemplo de entrada	Exemplo de saída
+// 108	801
+// 123	321
