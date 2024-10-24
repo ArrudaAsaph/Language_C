@@ -22,3 +22,8 @@ int main() {
     
     return 0;
 }
+<<<<<<< HEAD:Exercícios/Media_Reais.c
+=======
+
+// Escreva um programa que calcule a média aritmética de quatro números reais informados pelo usuário.
+>>>>>>> 83ce610f99a2dcd42d686d9fa4297794307ad589:Exercícios/4-Media_Reais.c
