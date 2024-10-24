@@ -1,5 +1,3 @@
-// O programa a seguir lê dois números inteiros a e b (−106 ≤ a, b ≤ 106 ) e mostra a soma dos mesmos.
-
 #include <stdio.h>
 
 int soma(int a, int b){
@@ -20,3 +18,4 @@ int main(){
     return 0;
 
 }
+//O programa a seguir lê dois números inteiros a e b (−106 ≤ a, b ≤ 106 ) e mostra a soma dos mesmos.
