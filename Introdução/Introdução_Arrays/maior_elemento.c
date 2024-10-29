@@ -5,6 +5,7 @@ int main (int argc, char **argv){
 		scanf("%d",&x[i]);
 	}
     indiceMaior=0;
+    indiceMenor = 0;
     maior=x[0];
     menor=x[0];
 
@@ -12,10 +13,9 @@ int main (int argc, char **argv){
 		if(x[i]>maior){
 			indiceMaior=i;
 			maior=x[i];
-
-        } else if(x[i] < menor){
+        } 
+         if(x[i] < menor){
             indiceMenor = i;
-            printf("%d",i);
             menor = x[i];
 		}
 	}
