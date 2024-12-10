@@ -31,14 +31,14 @@ int main(){
         {
         case 1:
         
-            printf("\nNome: ");
+            printf("Nome: ");
             scanf("%s", nome);
             printf("\nTelefone: ");
             scanf("%s", telefone);
             struct Agenda* agenda = criar_contato(nome,telefone);
             if (agenda != NULL) {
                 printf("Contato criado: %s, %s\n", agenda->nome, agenda->telefone);
-                free(agenda); // Libera a memória após o uso
+                free(agenda); 
             }
             break;
         case 2:
