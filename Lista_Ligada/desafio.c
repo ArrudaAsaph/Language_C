@@ -47,24 +47,6 @@ void inserir_Paciente(int valor, int preferencial)
         }
 }
 
-// void inserir_Paciente_Preferencial(int valor){
-//     struct Pacientes *novo_Paciente = (struct Pacientes *)malloc(sizeof(struct Pacientes));
-//     novo_Paciente->valor = valor;
-//     novo_Paciente->proximo = NULL;
-//     if (inicio_da_lista == NULL)
-//         {
-//             inicio_da_lista = novo_Paciente;
-//         }
-//     else
-//         {
-//             struct Pacientes *paciente_atual = inicio_da_lista;
-//             while (paciente_atual->proximo != NULL)
-//                 {
-//                     paciente_atual = paciente_atual->proximo;
-//                 }
-//             paciente_atual->proximo = novo_Paciente;
-//         }
-// }
 
 void remover_Paciente_Inicio(){
     struct Pacientes *paciente_atual = inicio_da_lista;
@@ -118,7 +100,6 @@ void remover_Paciente_Final(){
     free(paciente_atual);
 }
 
-
 void listar_fila(){
     struct Pacientes *paciente_atual = inicio_da_lista;
     while (paciente_atual != NULL)
@@ -127,6 +108,55 @@ void listar_fila(){
             paciente_atual = paciente_atual->proximo;
         }   
         printf("NULL\n");
+}
+
+int ultimo_preferencial(){
+    struct Pacientes *paciente_atual = inicio_da_lista;
+    struct Pacientes *paciente_anterior = NULL;
+    int contador_atual = 0;
+    int contador_proximo = 0;
+
+    while (paciente_atual != NULL)
+        {
+            if (paciente_atual->preferencial == 1)
+                {
+                    if (paciente_atual->proximo->preferencial == 1)
+                        {
+                            contador_proximo++;
+                             printf("Anterior = %d | Ultimo = %d",contador_atual,contador_proximo);
+                             return 0;
+                        }
+                    return contador_atual, contador_proximo++;
+                    printf("Ultimo: %d",contador_atual);
+                    return 0;
+                }
+
+            paciente_anterior = paciente_atual;
+            paciente_atual = paciente_atual->proximo;
+            contador_atual++;
+        }
+}
+
+int buscar_paciente(int valor){
+    struct Pacientes *paciente_atual = inicio_da_lista;
+    struct Pacientes *paciente_anterior = NULL;
+    int contador = 0;
+    while(paciente_atual != NULL)
+    {
+        if (paciente_atual->valor == valor)
+        {
+                     
+            return contador;
+        }
+        // printf("Contador: %d\n", contador);
+        // printf("Anterior -> %p | Valor -> %d\nProximo -> %p\n", (void *)paciente_anterior, paciente_atual->valor, (void *)paciente_atual->proximo);
+        paciente_anterior = paciente_atual;
+        paciente_atual = paciente_atual->proximo;
+        contador++;
+    }
+
+    printf("Paciente Inexistente!\n");
+    return  0;
 }
 
 int main(){
@@ -142,13 +172,19 @@ int main(){
     inserir_Paciente(80,0);
     listar_fila();
 
+    ultimo_preferencial();
+
     
     remover_Paciente(30);
+    int localizacao = buscar_paciente(30);
     listar_fila();
     remover_Paciente_Final();
     listar_fila();
     remover_Paciente_Inicio();
     listar_fila();
+    printf("Localização: %d\n",localizacao);
+
+    
     
 
     return 0;
